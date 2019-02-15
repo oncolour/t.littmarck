@@ -1,0 +1,81 @@
+//Sections
+#intro {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    min-height:100vh;
+    text-align: center;
+    padding:0 40px;
+    h1.h1-mega {
+      margin: 0 auto 40px;
+      animation: h1-intro 2.2s ease-in-out both;
+    }
+    h2.h2-large {
+      margin: 0 auto 40px;
+      max-width:100%;
+      animation: intro-fadeIn 0.55s ease-in-out 1.70s both;
+    }
+    p.preamble {
+      margin: 0 auto 20px;
+      max-width: 100%;
+      animation: intro-fadeIn 0.55s ease-in-out 1.9s both;
+    }
+  }
+  
+  @media (min-width:768px) {
+    #intro {
+      text-align: center;
+      padding: 0 100px;
+      h1.h1-mega {
+  
+      }
+      h2.h2-large {
+        max-width:70%;
+      }
+      p.preamble {
+        max-width: 60%;
+      }
+    }
+  }
+  
+  
+  @media (min-width:1280px) {
+    #intro {
+      text-align: center;
+      padding: 0 100px;
+      h1.h1-mega {
+  
+      }
+      h2.h2-large {
+        max-width:60%;
+      }
+      p.preamble {
+        max-width: 50%;
+      }
+    }
+  }
+  
+@keyframes h1-intro {
+    0%{
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    65% {
+      opacity: 1;
+      transform: translateY(70%);
+    }
+    100%{
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes intro-fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }

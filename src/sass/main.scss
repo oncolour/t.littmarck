@@ -1,18 +1,11 @@
-//@import 'imports/Reset_css_2';
-html,
+@import 'imports/Reset_css_2';
+@import 'imports/PolyFluidSizing.scss';
+@import 'imports/Typography.scss';
+@import 'imports/Header.scss';
+@import 'imports/Intro.scss';
+@import 'imports/portfolio.scss';
 body {
-    margin: 0;
-    padding: 0;
-}
-
-.myClass {
-    color: blue;
-    height: 3000px;
-    background-color: #f4f4f4;
-    .anotherClass {
-        color: green;
-        height: 2000px;
-        background-color:lightcoral;
-        width: 50%;
-    }
-}
+    font-family: 'Nexa', 'open sans', Arial, Helvetica, sans-serif;
+    height:2000px; 
+    overflow-x: hidden;
+  } 

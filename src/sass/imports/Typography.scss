@@ -1,0 +1,45 @@
+//Typography
+h2 {
+  $map: (576px: 22px, 768px: 24px, 992px: 35px, 1440: 40px, 1680: 55px);
+  @include poly-fluid-sizing('font-size', $map);
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+p {
+  $map: (576px: 16px, 768px: 18px, 992px: 18px, 1440: 20px, 1680: 22px);
+  @include poly-fluid-sizing('font-size', $map);
+}
+
+.h1-mega {
+    $map: (576px: 50px, 768px: 100px, 992px: 150px, 1440: 160px, 1680: 200px);
+    @include poly-fluid-sizing('font-size', $map);
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  
+  .h2-large {
+    $map: (576px: 22px, 768px: 24px, 992px: 40px, 1440: 45px, 1680: 60px);
+    @include poly-fluid-sizing('font-size', $map);
+    margin-bottom: 40px;
+    font-weight: bold;
+  }
+  .preamble {
+    $map: (576px: 16px, 768px: 18px, 992px: 20px, 1440: 22px, 1680: 24px);
+    @include poly-fluid-sizing('font-size', $map);
+  }
+  
+  @media (min-height:900px) {
+    .h1-mega {
+      $map: (576px: 50px, 768px: 100px, 992px: 150px, 1440: 200px, 1680: 250px);
+      @include poly-fluid-sizing('font-size', $map);
+    }
+  
+    .h2-large {
+      $map: (576px: 22px, 768px: 24px, 992px: 40px, 1440: 60px, 1680: 75px);
+      @include poly-fluid-sizing('font-size', $map);
+    }
+    .preamble {
+      $map: (576px: 16px, 768px: 18px, 992px: 24px, 1440: 26px, 1680: 26px);
+      @include poly-fluid-sizing('font-size', $map);
+    }
+  }

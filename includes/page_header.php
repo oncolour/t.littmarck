@@ -1,8 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en" itemscope itemtype="http://schema.org/LocalBusiness" prefix="og: http://ogp.me/ns#">
-
-
-
 <head>
     <title>
         <?php echo $your_meta_title ?> - StartProject</title>
@@ -25,7 +22,11 @@
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic' rel='stylesheet' type='text/css'>
 
-    <link rel="stylesheet" type="text/css" href="/css/main-css.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.min.css">
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" rel="script"></script>
+    <script src="src/js/scrollSpeed-master/jQuery.scrollSpeed.js" rel="script"></script>
+    <script src="js/main-javascript.min.js" rel="script"></script>
 
 </head>
 

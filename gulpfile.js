@@ -16,7 +16,8 @@ gulpSass.compiler = require('node-sass');
 var paths = {
     styles: {
       src: './src/sass/*.scss',
-      dest: './CSS/'
+      dest: './CSS/',
+      all: './src/sass/**/*.scss'
     },
     scripts: {
       src: './src/js/*.js',
@@ -66,7 +67,7 @@ function js_min() {
 
 // Watch scss and js files
 function watch() {
-    gulp.watch(paths.styles.src, { ignoreInitial: false }, sass);
+    gulp.watch(paths.styles.all, { ignoreInitial: false }, sass);
     gulp.watch(paths.scripts.src, { ignoreInitial: false }, js_min);
 }
 exports.watch = watch;
