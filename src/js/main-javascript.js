@@ -11,32 +11,6 @@
 
        
 
-        //Vertical scroll
-        scrollVert();
-        var scrollLeft = 0;
-
-        function scrollVert() {
-            $('html, body, *').off('mousewheel').mousewheel(function (e, delta) {
-                this.scrollTop -= (delta * 40);
-                e.preventDefault();
-                setTimeout(function () {
-                    if ($(window).scrollTop() + $(window).height() == $(document).height())
-                        scrollHoriz();
-                }, 0)
-
-            });
-        }
-        function scrollHoriz() {
-            $('html, body, *').off('mousewheel').mousewheel(function (e, delta) {
-                this.scrollLeft -= (delta * 80);
-                e.preventDefault();
-                scrollLeft = this.scrollLeft
-                setTimeout(function () {
-                    if (scrollLeft == 0) scrollVert();
-                }, 0)
-            });
-        }
-
          
 
 
@@ -45,5 +19,18 @@
 
 // Adding smooth and realistic scrolling behaviour. 
 /* $(function () {
-    jQuery.scrollSpeed(100, 800);
+    jQuery.scrollSpeed(100);
 }); */
+
+$(window).ready(function(){
+    // Horizontal scroll
+    if($("#js-page-scroll").length){
+        $("#js-page-scroll").mCustomScrollbar({
+            axis:"x",
+            theme:"dark-3",
+            //scrollbarPosition: 'outside',
+            advanced:{ autoExpandHorizontalScroll:true }
+        });
+    }
+});
+ 
