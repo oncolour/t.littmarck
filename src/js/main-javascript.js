@@ -28,7 +28,12 @@ $(window).ready(function(){
         $("#js-page-scroll").mCustomScrollbar({
             axis:"x",
             theme:"dark-3",
-            //scrollbarPosition: 'outside',
+            scrollInertia: 700,
+            autoHideScrollbar: true,
+            mouseWheel:{ scrollAmount: 200, preventDefault: false },
+            
+            scrollbarPosition: 'outside',
+            contentTouchScroll: true,
             advanced:{ autoExpandHorizontalScroll:true }
         });
     }
