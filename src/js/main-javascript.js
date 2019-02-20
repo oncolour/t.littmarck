@@ -6,12 +6,10 @@
         $("#toggle-menu").click(function () {
             $(".menu-container").toggleClass('open');
             $(".fimi").toggleClass('active');
-            $("body").toggleClass('darken');
+            $("#page-header").toggleClass('darken');
         });
 
-       
-
-         
+        
 
 
     });
@@ -30,8 +28,7 @@ $(window).ready(function(){
             theme:"dark-3",
             scrollInertia: 700,
             autoHideScrollbar: true,
-            mouseWheel:{ scrollAmount: 200, preventDefault: false },
-            
+            mouseWheel:{ scrollAmount: 250, preventDefault: false },
             scrollbarPosition: 'outside',
             contentTouchScroll: true,
             advanced:{ autoExpandHorizontalScroll:true }

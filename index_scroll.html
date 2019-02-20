@@ -35,7 +35,7 @@ var scrollLeft=0;
 
 function scrollVert() {
   $('html, body, *').off('mousewheel').mousewheel(function(e, delta) {
-    this.scrollTop -= (delta * 2);
+    this.scrollTop = delta;
     e.preventDefault();
     setTimeout(function() {
       if ($(window).scrollTop() + $(window).height() == $(document).height())
@@ -46,7 +46,7 @@ function scrollVert() {
 }
 function scrollRed() {
   $('.yolo').off('mousewheel').mousewheel(function(e, delta) {
-    this.scrollLeft -= (delta * 2);
+    this.scrollLeft = delta;
     //e.preventDefault();
     scrollLeft=this.scrollLeft
     console.log(scrollLeft + "home");

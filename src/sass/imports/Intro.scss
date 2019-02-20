@@ -13,12 +13,12 @@
     h2.h2-large {
       margin: 0 auto 40px;
       max-width:100%;
-      animation: intro-fadeIn 0.55s ease-in-out 1.70s both;
+      animation: intro-fadeIn 0.65s ease-in-out 1.6s both;
     }
     p.preamble {
       margin: 0 auto 20px;
       max-width: 100%;
-      animation: intro-fadeIn 0.55s ease-in-out 1.9s both;
+      animation: intro-fadeIn-Preamble 0.65s ease-in-out 1.7s both;
     }
   }
   
@@ -27,13 +27,14 @@
       text-align: center;
       padding: 0 100px;
       h1.h1-mega {
-  
+        
       }
       h2.h2-large {
         max-width:70%;
       }
       p.preamble {
         max-width: 60%;
+        
       }
     }
   }
@@ -58,11 +59,11 @@
 @keyframes h1-intro {
     0%{
       opacity: 0;
-      transform: translateY(70%);
+      transform: translateY(50%);
     }
     65% {
       opacity: 1;
-      transform: translateY(70%);
+      transform: translateY(50%);
     }
     100%{
       transform: translateY(0px);
@@ -72,7 +73,18 @@
   @keyframes intro-fadeIn {
     0% {
       opacity: 0;
-      transform: translateY(70%);
+      transform: translateY(50%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes intro-fadeIn-Preamble {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
     }
     100% {
       opacity: 1;
