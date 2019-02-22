@@ -1,8 +1,15 @@
 //Typography
+h1 {
+  $map: (576px: 30px, 768px: 32px, 992px: 45px, 1440: 60px, 1680: 70px);
+  @include poly-fluid-sizing('font-size', $map);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
 h2 {
   $map: (576px: 22px, 768px: 24px, 992px: 35px, 1440: 40px, 1680: 55px);
   @include poly-fluid-sizing('font-size', $map);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   font-weight: bold;
 }
 h3 {
@@ -15,6 +22,8 @@ p {
   $map: (576px: 16px, 768px: 18px, 992px: 18px, 1440: 20px, 1680: 22px);
   @include poly-fluid-sizing('font-size', $map);
   line-height: 1.4;
+  margin-bottom:1rem;
+
   &.p-small {
     $map: (576px: 16px, 768px: 16px, 992px: 14px, 1440: 16px, 1680: 16px);
     @include poly-fluid-sizing('font-size', $map);
@@ -25,22 +34,38 @@ p {
 .h1-mega {
     $map: (576px: 50px, 768px: 100px, 992px: 150px, 1440: 160px, 1680: 200px);
     @include poly-fluid-sizing('font-size', $map);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-weight: bold;
   }
   
   .h2-large {
     $map: (576px: 22px, 768px: 24px, 992px: 40px, 1440: 45px, 1680: 60px);
     @include poly-fluid-sizing('font-size', $map);
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     font-weight: bold;
   }
   .preamble {
-    $map: (576px: 16px, 768px: 18px, 992px: 20px, 1440: 22px, 1680: 24px);
+    $map: (576px: 14px, 768px: 18px, 992px: 20px, 1440: 22px, 1680: 24px);
+    @include poly-fluid-sizing('font-size', $map);
+  }
+
+  .meta-details {
+    $map: (576px: 14px, 768px: 16px, 992px: 16px, 1440: 18px, 1680: 20px);
+    @include poly-fluid-sizing('font-size', $map);
+    color: $color-gray;
+  }
+
+  .year {
+    $map: (576px: 16px, 768px: 16px, 992px: 16px, 1440: 18px, 1680: 20px);
+    @include poly-fluid-sizing('font-size', $map);
+    color: $color-gray-light;
+  }
+  .back {
+    $map: (576px: 14px, 768px: 14px, 992px: 14px, 1440: 16px, 1680: 18px);
     @include poly-fluid-sizing('font-size', $map);
   }
   
-  @media (min-height:900px) {
+  @media (min-height:$height-900) {
     .h1-mega {
       $map: (576px: 50px, 768px: 100px, 992px: 150px, 1440: 200px, 1680: 250px);
       @include poly-fluid-sizing('font-size', $map);
@@ -54,4 +79,29 @@ p {
       $map: (576px: 16px, 768px: 18px, 992px: 24px, 1440: 26px, 1680: 26px);
       @include poly-fluid-sizing('font-size', $map);
     }
+  }
+
+  @media (min-width:$width-769) {
+    h1 {
+      margin-bottom: 40px;
+    }
+    
+    h2 {
+      margin-bottom: 40px;
+    }
+    h3 {
+      margin-bottom: 10px;
+    }
+    p {
+      line-height: 1.4;
+      margin-bottom:2rem;
+    }
+    
+    .h1-mega {
+        margin-bottom: 40px;
+      }
+      
+      .h2-large {
+        margin-bottom: 40px;
+      }
   }

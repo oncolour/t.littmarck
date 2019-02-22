@@ -22,7 +22,7 @@
     }
   }
   
-  @media (min-width:768px) {
+  @media (min-width:$width-768) {
     #intro {
       text-align: center;
       padding: 0 100px;
@@ -40,7 +40,7 @@
   }
   
   
-  @media (min-width:1280px) {
+  @media (min-width:$width-1280) {
     #intro {
       text-align: center;
       padding: 0 100px;

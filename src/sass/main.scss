@@ -1,21 +1,9 @@
-@import 'imports/Reset_css_2';
-@import 'imports/PolyFluidSizing.scss';
-@import 'imports/Typography.scss';
-@import 'imports/Header.scss';
-@import 'imports/Intro.scss';
-@import 'imports/portfolio.scss';
-body {
-    font-family: 'Nexa', 'open sans', Arial, Helvetica, sans-serif;
-    //height:2000px; 
-    overflow-x: hidden;
-  } 
-
-.yolo {
-  width: 100%;
-  background: #009999;
-  overflow-x: scroll;
-}
-/* .js-page-scroll::-webkit-scrollbar { 
-  display: none; 
-} */
-
+@import 'imports/_Reset_css_2.scss';
+@import 'imports/_PolyFluidSizing.scss';
+@import 'imports/_Base.scss';
+@import 'imports/_Typography.scss';
+@import 'imports/_Header.scss';
+@import 'imports/_Intro.scss';
+@import 'imports/_Portfolio.scss';
+@import 'imports/_Post.scss';
+@import 'imports/jquery.fancybox.min.css';
