@@ -1,8 +1,12 @@
  
+  body.menuOpen {
+    overflow: hidden;
+    position: fixed;
+  }
   #page-header {
     font-family: 'Lato', sans-serif;
     width:100%;
-    height: 100px;
+    height: 80px;
     margin: 0 auto 0;
     display:flex;
     justify-content: space-between;
@@ -16,16 +20,18 @@
       content: "";
       position: absolute;
       z-index: 1;
-      width: 100%;
+      width: 0%;
       height: 100vh;
       top:0;
       background-color: rgba(0,0,0,0.0);
-      transition: background-color 0.55s ease-in-out;
+      transition: background-color 0.55s ease-in-out , width 0s linear 0.55s;
     }
     &.darken {
       z-index: 1;
       &::after {
+        width: 100%;
         background-color: rgba(0,0,0,0.2);
+        transition: background-color 0.55s ease-in-out, width 0s linear;
       }
     }
   
@@ -44,7 +50,7 @@
     background:none;
     border:0;
     font-weight:bold;
-    margin-right: 20px;
+    margin-right: 14px;
     position: relative;
     z-index: 3;
     &:hover {
@@ -57,7 +63,6 @@
     top:0;
     left:0;
     width:100%;
-    height:400px;
     background: #fff;
     z-index:2;
     //Animate
@@ -67,65 +72,65 @@
       transform: translateY(0px);
     }
     .container {
-      width:80vw;
+      
       max-width:1400px;
       margin:auto;
       padding-top: 84px;
+      padding-bottom: 30px;
       display:flex;
       justify-content: space-between;
+      flex-flow: row wrap;
       h3 {
         font-size:14px;
+        font-weight: normal;
         color:#aaa;
-        margin-bottom: 35px;
-      }
-      a {
-        position: relative;
-        span {
-          width: 150%;
-          height: 110%;
-          background-color: #f2f2f2;
-          position: absolute;
-          z-index: -1;
-          animation-duration: 0.65s;
-          animation-fill-mode: forwards;
-          animation-name: hoverMenuItemsEnd;
-        }
-        &:hover span {
-          animation-name: hoverMenuItems;
-        }
+        margin-bottom: 10px;
+        margin-left: 20px;
       }
     }
     nav {
+      margin-bottom: 25px;
+      flex:1 100%;
       ul {
   
         li {
           display:block;
-          padding:5px 12px;
+          
           overflow: hidden;
+          border-bottom: 1px solid #eee;
+          &:first-child {
+            border-top: 1px solid #eee;
+          }
           a {
+            padding:25px 30px;
             font-size: 25px;
             color: #000;
             font-weight: bold;
-            margin-bottom: 15px;
+            display: block;
             line-height: 1.2;
+            &:active, &:hover {
+              background-color: #eee;
+            }
           }
         }
       }
     }
     .column {
+      flex:1 50%;
       h2 {
         font-size: 25px;
         color:#000;
         font-weight: bold;
-        margin-bottom: 15px;
+        margin-bottom: 10px;
+        margin-left: 30px;
       }
       address {
         padding-left: 0px;
-        margin-left: 10px;
+        margin-left: 30px;
         overflow: hidden; 
         a,
         span {
-          padding: 0 10px;
+          
           font-size: 14px;
           color:#666;
           font-weight: normal;
@@ -154,7 +159,7 @@
   .fade-in-start {
     transform: translateY(0px);
     animation-timing-function: ease-in-out;
-    animation-delay:1s;
+    animation-delay:0s;
     animation-duration: 0.75s;
     animation-fill-mode: backwards;
     animation-name: startFadeIn;
@@ -226,11 +231,81 @@
     }
   }
 
+
   @media screen and (min-width:$width-769) {
+    body.menuOpen {
+      overflow: unset;
+      position: unset;
+    }
    #page-header {
+    height: 100px;
     background: transparent;
       .logo {
       margin-left: 50px;
+      }
+      #toggle-menu {
+        margin-right: 20px;
+      }
+      .menu-container {
+        .container {
+          flex-direction: row;
+          width:80%;
+          padding-bottom:84px;
+          h3 {
+            margin-bottom: 35px;
+            margin-left:0;
+          }
+          a {
+            position: relative;
+            span {
+              width: 150%;
+              height: 110%;
+              background-color: #f2f2f2;
+              position: absolute;
+              z-index: -1;
+              animation-duration: 0.65s;
+              animation-fill-mode: forwards;
+              animation-name: hoverMenuItemsEnd;
+            }
+            &:hover span {
+              animation-name: hoverMenuItems;
+            }
+          }
+        }
+        nav {
+          margin-bottom: 0;
+          flex: unset;
+          ul {
+            li {
+              padding:5px 12px;
+              border:0;
+              &:first-child {
+                border:0;
+              }
+              a {
+                padding:0;
+                margin-bottom: 15px;
+                display: inline;
+                &:active, &:hover {
+                  background-color:unset;
+                }
+              }
+            }
+          }
+        }
+        .column {
+          flex: unset;
+          h2 {
+            margin-left:0;
+            margin-bottom: 15px;
+          }
+          address {
+            margin-left: 10px;
+            a, span {
+              padding: 0 10px;
+            }
+          }
+        }
       }
     }
     #toggle-menu {

@@ -2,28 +2,105 @@
 #intro {
     display:flex;
     flex-direction:column;
-    justify-content:center;
-    min-height:100vh;
+    min-height:calc(85vh - 80px);
     text-align: center;
-    padding:0 40px;
+    padding:15vh 40px 0;
+    .wrapper {
+      background:#fff;
+      position: relative;
+      z-index: 3;
+    }
     h1.h1-mega {
-      margin: 0 auto 40px;
+      margin-left:auto;
+      margin-right: auto;
       animation: h1-intro 2.2s ease-in-out both;
     }
     h2.h2-large {
-      margin: 0 auto 40px;
+      margin-left:auto;
+      margin-right: auto;
       max-width:100%;
-      animation: intro-fadeIn 0.65s ease-in-out 1.6s both;
+      animation: intro-fadeIn 0.7s ease-in-out 1.6s both;
     }
     p.preamble {
-      margin: 0 auto 20px;
+      margin-left:auto;
+      margin-right: auto;
       max-width: 100%;
       animation: intro-fadeIn-Preamble 0.65s ease-in-out 1.7s both;
     }
   }
+
+.scroll-down {
+  opacity: 1;
+  -webkit-transition: all .5s ease-in 3s;
+  transition: all .5s ease-in 3s;
+}
+
+
+
+.scroll-down {
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  margin-left: -16px;
+  display: block;
+  padding: 16px;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  background-size: 14px auto;
+  border-radius: 50%;
+  z-index: 2;
+  -webkit-animation: bounce 2s infinite 2s;
+  animation: bounce 2s infinite 2s;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  overflow: visible;
+}
+
+.scroll-down:before {
+    position: absolute;
+    top: calc(50% - 8px);
+    left: calc(50% - 6px);
+    transform: rotate(-45deg);
+    display: block;
+    width: 11px;
+    height: 11px;
+    content: "";
+    border: 2px solid #000;
+    border-width: 0px 0 2px 2px;
+}
+
+@media (orientation: landscape) {
+  .scroll-down {
+    display: none;
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100%,
+  20%,
+  50%,
+  80% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    transform: translateY(-5px);
+  }
+}
   
   @media (min-width:$width-768) {
     #intro {
+      min-height: calc(100vh - 100px);
+      justify-content:center;
       text-align: center;
       padding: 0 100px;
       h1.h1-mega {
@@ -73,7 +150,7 @@
   @keyframes intro-fadeIn {
     0% {
       opacity: 0;
-      transform: translateY(50%);
+      transform: translateY(75%);
     }
     100% {
       opacity: 1;
@@ -84,7 +161,7 @@
   @keyframes intro-fadeIn-Preamble {
     0% {
       opacity: 0;
-      transform: translateY(100%);
+      transform: translateY(50%);
     }
     100% {
       opacity: 1;

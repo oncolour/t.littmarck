@@ -32,20 +32,20 @@ p {
 }
 
 .h1-mega {
-    $map: (576px: 50px, 768px: 100px, 992px: 150px, 1440: 160px, 1680: 200px);
+    $map: (320px: 40px, 375px: 60px, 768px: 100px, 992px: 150px, 1440: 160px, 1680: 200px);
     @include poly-fluid-sizing('font-size', $map);
     margin-bottom: 20px;
     font-weight: bold;
   }
   
   .h2-large {
-    $map: (576px: 22px, 768px: 24px, 992px: 40px, 1440: 45px, 1680: 60px);
+    $map: (320px: 20px, 375px: 24px, 768px: 24px, 992px: 40px, 1440: 45px, 1680: 60px);
     @include poly-fluid-sizing('font-size', $map);
     margin-bottom: 20px;
     font-weight: bold;
   }
   .preamble {
-    $map: (576px: 14px, 768px: 18px, 992px: 20px, 1440: 22px, 1680: 24px);
+    $map: (320px: 15px, 375px: 16px, 768px: 20px, 992px: 20px, 1440: 22px, 1680: 24px);
     @include poly-fluid-sizing('font-size', $map);
   }
 
