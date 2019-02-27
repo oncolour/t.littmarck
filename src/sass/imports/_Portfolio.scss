@@ -3,10 +3,36 @@
     flex-direction: column;
     justify-content: center;
     padding-top: 130px;
-    header {
+    header.container {
         h2,p {
             max-width: 700px;
             margin-bottom: 30px;
+        }
+        aside {
+            margin-bottom: 20px;
+            button {
+                border: none;
+                    margin: 0;
+                    padding: 0;
+                    width: auto;
+                    overflow: visible;
+                    background: transparent;
+
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-right: 25px;
+                    color: #a5a5a5;
+                    &:hover {
+                        cursor: pointer;
+                        color: #000;
+                    }
+                    &.active {
+                        color: #000;
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+            }
         }
     }
     main {
@@ -62,9 +88,28 @@
         width:100%; 
         height:100vh;
         padding-top: 0px;
+
+        header.container {
+            display: flex;
+            > div {
+                flex: 1 0 auto;
+            }
+            aside {
+                margin-top:25px;
+                margin-bottom: 0;
+                button {
+             
+                }
+            }
+        }
+
         main {
             white-space: nowrap;
             margin: 50px 0 0;
+            padding-left: 50px;
+            padding-right: 50px;
+            z-index: 1;
+            background: #fff;
             .post-teaser {
                 min-width: 350px;
                 width:calc(100vw/5);
@@ -77,13 +122,6 @@
 
                 > a {
                     height: 130%;
-                }
-
-                &:first-child {
-                    margin-left: 50px;
-                }
-                &:last-child {
-                    margin-right: 50px;
                 }
                 
                 .post-teaser-img {
@@ -105,34 +143,34 @@
                 }
             }
             &:hover .post-teaser {
-                .post-teaser-img {
+                &:hover .post-teaser-img {
                     transform:scale(1.1,1.1);   
                 }
-                &::after {
+                &:hover &::after {
                     box-shadow: 0 4px 4px rgba(0,0,0,0.10), 0 8px 8px rgba(0,0,0,0.10), 0 16px 16px rgba(0,0,0,0.10), 0 32px 32px rgba(0,0,0,0.10), 0 64px 64px rgba(0,0,0,0.10), 0 128px 128px rgba(0,0,0,0.10);
                     transform:scale(1.1,1.1);
                     opacity: 1;
                 }
-                header {
+                &:hover header {
                     transform: translateY(50%);
                     opacity: 1;
                 }
     
-            &:not(:hover) {
-                .post-teaser-img {
-                    transform: scale(0.9,0.9);
+                &:not(:hover) {
+                    .post-teaser-img {
+                        transform: scale(0.9,0.9);
+                    }
+                    &::after {
+                        box-shadow: 0 3px 3px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1), 0 12px 12px rgba(0,0,0,0.1), 0 24px 24px rgba(0,0,0,0.1), 0 48px 48px rgba(0,0,0,0.1);
+                        transform: scale(0.9,0.9);
+                        opacity: 0.8;
+                        //transform: scale(0.9,0.9);
+                    }
+                    header {
+                        transform: translateY(70%);
+                        opacity: 0;
+                    }
                 }
-                &::after {
-                    box-shadow: 0 3px 3px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1), 0 12px 12px rgba(0,0,0,0.1), 0 24px 24px rgba(0,0,0,0.1), 0 48px 48px rgba(0,0,0,0.1);
-                    transform: scale(0.9,0.9);
-                    opacity: 0.8;
-                    //transform: scale(0.9,0.9);
-                }
-                header {
-                    transform: translateY(70%);
-                    opacity: 0;
-                }
-            }
             }
         }
     }
@@ -143,3 +181,20 @@
 
 }
 
+.fade-in {
+    animation-timing-function: ease-in-out;
+    animation-delay:0s;
+    animation-duration: 0.75s;
+    animation-fill-mode: backwards;
+    animation-name: FadeIn;
+}
+ 
+  //Fade in from bottom
+  @keyframes FadeIn {
+    from {
+      opacity:0;
+    }
+    to {
+      opacity:1;
+    }
+  }

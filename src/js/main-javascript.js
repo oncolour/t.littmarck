@@ -10,8 +10,14 @@
             $("#page-header").toggleClass('darken');
         });
 
+        var filterContainer = document.querySelector('#js-page-scroll');
+        var mixer = mixitup(filterContainer);
         
-
+        $(".filterBtn").click(function () {
+            $(".active").toggleClass('active');
+            $(this).toggleClass('active');
+            
+        });
 
     });
 })(jQuery);
@@ -22,7 +28,7 @@
 }); */
     
 
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 769) {
         $(window).ready(function(){
          // Horizontal scroll
          if($("#js-page-scroll").length){

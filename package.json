@@ -2,7 +2,8 @@
   "name": "start",
   "version": "1.0.0",
   "description": "my gulp file",
-  "main": "Gruntfile_backup.js",
+  "main": "gulpfile",
+  "typings": "gulpfile",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,6 +28,7 @@
     "node-sass": "^4.11.0"
   },
   "dependencies": {
-    "del": "^3.0.0"
+    "del": "^3.0.0",
+    "mixitup": "^3.3.1"
   }
 }
