@@ -23,19 +23,39 @@
             });
         });
 
-        /* $('#js-page-scroll').on('mixEnd', function(e, state) {
+         $('#js-page-scroll').on('mixEnd', function(e, state) {
             var state = mixer.getState();
-            console.log(state.totalShow + ' targets are currently shown');
+            //console.log(state.totalShow + ' targets are currently shown');
             if(state.totalShow <= 2) {
                 $('.post-teaser').toggleClass('hover');
             }
-        }); */
+        }); 
+          
+        // Prevent default
+        $(window).scroll(function() {
+            var top_of_element = $(".post-teaser").offset().top;
+            var bottom_of_element = $(".post-teaser").offset().top + $(".post-teaser").outerHeight();
+            var bottom_of_screen = $(window).scrollTop() + $(window).innerHeight();
+            var top_of_screen = $(window).scrollTop();
 
-        
-        //mixer
-    
+            
+            var scrollDistance = $(window).innerHeight();
+            //console.log(scrollDistance);
+            //console.log(window.pageYOffset);
+            
 
-        //mixer
+            if (window.pageYOffset > scrollDistance) {
+                //console.log("scroll horizontal now");
+                
+
+                
+                
+            } else {
+               // console.log("no scroll");
+                //$("#js-page-scroll").mCustomScrollbar("disable", true);
+                
+            }
+        });
 
     });
 })(jQuery);
