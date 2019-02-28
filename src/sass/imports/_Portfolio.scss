@@ -83,6 +83,11 @@
         
     }
 }
+
+.post-teaser.placeholder {
+    display: none;
+}
+
 @media screen and (min-width:$width-769) {
     #portfolio {
         width:100%; 
@@ -174,7 +179,9 @@
             }
         }
     }
-    
+    .post-teaser.placeholder {
+        display: inline-block;
+    }
     
 }
 @media (min-width:$width-1280) {
