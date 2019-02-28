@@ -67,7 +67,9 @@
 
             .post-teaser-img {
                 position: relative;
+                background-color:#fff;
                 background-size: cover;
+                background-position: center center;
                 border-radius: 15px;
                 width: 100%;
                 height: 100%;
@@ -146,14 +148,15 @@
                     @extend %after-shadow-desktop;
                     width: calc(80% - 40px);
                 }
+               
             }
             &:hover .post-teaser {
                 &:hover .post-teaser-img {
-                    transform:scale(1.1,1.1);   
+                    transform:scale(1.05,1.05);   
                 }
                 &:hover &::after {
                     box-shadow: 0 4px 4px rgba(0,0,0,0.10), 0 8px 8px rgba(0,0,0,0.10), 0 16px 16px rgba(0,0,0,0.10), 0 32px 32px rgba(0,0,0,0.10), 0 64px 64px rgba(0,0,0,0.10), 0 128px 128px rgba(0,0,0,0.10);
-                    transform:scale(1.1,1.1);
+                    transform:scale(1.05,1.05);
                     opacity: 1;
                 }
                 &:hover header {
@@ -163,13 +166,12 @@
     
                 &:not(:hover) {
                     .post-teaser-img {
-                        transform: scale(0.9,0.9);
+                        transform: scale(0.95,0.95);
                     }
                     &::after {
                         box-shadow: 0 3px 3px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1), 0 12px 12px rgba(0,0,0,0.1), 0 24px 24px rgba(0,0,0,0.1), 0 48px 48px rgba(0,0,0,0.1);
-                        transform: scale(0.9,0.9);
+                        transform: scale(0.95,0.95);
                         opacity: 0.8;
-                        //transform: scale(0.9,0.9);
                     }
                     header {
                         transform: translateY(70%);

@@ -12,12 +12,30 @@
 
         var filterContainer = document.querySelector('#js-page-scroll');
         var mixer = mixitup(filterContainer);
+
+       
         
         $(".filterBtn").click(function () {
             $(".active").toggleClass('active');
             $(this).toggleClass('active');
-            
+            $("#js-page-scroll").mCustomScrollbar("scrollTo", "left", {
+                scrollInertia: 0
+            });
         });
+
+        /* $('#js-page-scroll').on('mixEnd', function(e, state) {
+            var state = mixer.getState();
+            console.log(state.totalShow + ' targets are currently shown');
+            if(state.totalShow <= 2) {
+                $('.post-teaser').toggleClass('hover');
+            }
+        }); */
+
+        
+        //mixer
+    
+
+        //mixer
 
     });
 })(jQuery);
@@ -37,16 +55,12 @@
                 theme:"dark-3",
                 scrollInertia: 700,
                 autoHideScrollbar: true,
-                mouseWheel:{ scrollAmount: 250, preventDefault: false },
                 scrollbarPosition: 'outside',
                 contentTouchScroll: true,
-                advanced:{ autoExpandHorizontalScroll:true }
+                advanced:{ autoExpandHorizontalScroll: 3 }
             });
         }
     });
-        console.log("I'm 769 px wide");
-    } else {
-        console.log("I'm Mobile");
     } 
 
 
