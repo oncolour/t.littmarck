@@ -1,3 +1,29 @@
+@font-face {
+  font-family: "News Cycle";
+  src: url("/src/fonts/News_Cycle/NewsCycle-Regular.ttf");
+  font-weight: normal;
+  }
+  
+@font-face {
+  font-family: "News Cycle";
+  src: url("/src/fonts/News_Cycle/NewsCycle-Bold.ttf");
+  font-weight: bold;
+  }
+
+  @font-face {
+    font-family: "Body";
+    src: url("/src/fonts/Body/Body/Zetafonts\ -\ Body\ Text\ Slim\ Light.otf");
+    font-weight: normal;
+    }
+    
+  @font-face {
+    font-family: "Body";
+    src: url("/src/fonts/Body/Body-Grotesque-Bold-trial.ttf");
+    font-weight: bold;
+    }
+  
+  
+
 //Typography
 h1 {
   $map: (576px: 30px, 768px: 32px, 992px: 45px, 1440: 60px, 1680: 70px);
