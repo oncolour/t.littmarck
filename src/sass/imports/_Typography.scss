@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "News Cycle";
   src: url("/src/fonts/News_Cycle/NewsCycle-Regular.ttf");
   font-weight: normal;
@@ -20,9 +20,12 @@
     font-family: "Body";
     src: url("/src/fonts/Body/Body-Grotesque-Bold-trial.ttf");
     font-weight: bold;
+    } */
+  
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-  
-  
 
 //Typography
 h1 {
@@ -49,16 +52,15 @@ p {
   @include poly-fluid-sizing('font-size', $map);
   line-height: 1.4;
   margin-bottom:1rem;
-
-  &.p-small {
-    $map: (576px: 16px, 768px: 16px, 992px: 14px, 1440: 16px, 1680: 16px);
-    @include poly-fluid-sizing('font-size', $map);
-    line-height: 1.4;
-  }
+}
+p.p-small, .p-small {
+  $map: (576px: 16px, 768px: 16px, 992px: 14px, 1440: 16px, 1680: 16px);
+  @include poly-fluid-sizing('font-size', $map);
+  line-height: 1.4;
 }
 
 .h1-mega {
-    $map: (320px: 40px, 375px: 60px, 768px: 100px, 992px: 150px, 1440: 160px, 1680: 200px);
+    $map: (320px: 40px, 375px: 60px, 768px: 100px, 992px: 125px, 1440: 160px, 1680: 200px);
     @include poly-fluid-sizing('font-size', $map);
     margin-bottom: 20px;
     font-weight: bold;
@@ -93,7 +95,7 @@ p {
   
   @media (min-height:$height-900) {
     .h1-mega {
-      $map: (576px: 50px, 768px: 100px, 992px: 150px, 1440: 200px, 1680: 250px);
+      $map: (320px: 40px, 576px: 50px, 768px: 100px, 992px: 125px, 1440: 200px, 1680: 250px);
       @include poly-fluid-sizing('font-size', $map);
     }
   

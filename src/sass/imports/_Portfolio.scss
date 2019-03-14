@@ -3,8 +3,12 @@
     flex-direction: column;
     justify-content: center;
     padding-top: 130px;
+    h2.container {
+        margin: 0 auto 40px;
+    }
+
     header.container {
-        h2,p {
+        p {
             max-width: 700px;
             margin-bottom: 30px;
         }
@@ -17,7 +21,7 @@
                     width: auto;
                     overflow: visible;
                     background: transparent;
-
+                    line-height: 2;
                     font-size: 18px;
                     font-weight: bold;
                     margin-right: 25px;
@@ -98,11 +102,11 @@
 
         header.container {
             display: flex;
+            flex-direction: column;
             > div {
                 flex: 1 0 auto;
             }
             aside {
-                margin-top:25px;
                 margin-bottom: 0;
                 button {
              
@@ -186,7 +190,25 @@
     }
     
 }
-@media (min-width:$width-1280) {
+@media screen and (min-width:$width-1280) {
+    #portfolio {
+        header.container {
+            flex-direction: row;
+            > div {
+                padding-right: 50px;
+            }
+            aside {
+                margin-top:0;
+                text-align: right;
+                button {
+                    margin-right: 0;
+                    margin-left:25px;
+                    line-height: 1.4;
+                    padding: 0 5px 5px;
+                }
+            }
+        }
+    }
 
 }
 

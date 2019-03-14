@@ -183,7 +183,8 @@
       animation-duration: 0.55s;
       animation-fill-mode: backwards;
       animation-name: expandMenuItems;
-      &.agent-1 {
+
+       &.agent-1 {
         animation-delay:0.20s;
       }
       &.agent-2 {
@@ -197,6 +198,22 @@
       }
       &.agent-5 {
         animation-delay:0.40s;
+      }
+    }
+  }
+
+  .menu-main-menu-container ul li.active {
+      animation-duration: 0.55s;
+        animation-fill-mode: backwards;
+        animation-name: expandMenuItems;
+  }
+
+  .menu-main-menu-container ul li {
+    
+    @for $i from 1 through 10 {
+      &.active:nth-child(#{$i}) { 
+        
+        animation-delay: 0.20s+($i * 0.05s); 
       }
     }
   }

@@ -7,6 +7,7 @@
             $("body").toggleClass('menuOpen');
             $(".menu-container").toggleClass('open');
             $(".fimi").toggleClass('active');
+            $(".menu-item").toggleClass('active');
             $("#page-header").toggleClass('darken');
         });
 
