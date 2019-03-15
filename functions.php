@@ -55,7 +55,7 @@ add_action('admin_menu', 'baw_create_menu');
 function baw_create_menu() {
 
 	//create new top-level menu
-	add_menu_page('Page Settings', 'Page Settings', 'administrator', __FILE__, 'baw_settings_page','/wp-content/themes/t.littmarck//img/settings.svg');
+	add_menu_page('Anpassning', 'Anpassning', 'administrator', __FILE__, 'baw_settings_page','dashicons-admin-generic');
 
 	//call register settings function
 	add_action( 'admin_init', 'register_mysettings' );
@@ -93,7 +93,7 @@ function register_mysettings() {
 function baw_settings_page() {
 ?>
 <div class="wrap">
-<h2>Site settings</h2>
+<h2>Tema inställningar</h2>
 
 <form method="post" action="options.php">
     <?php settings_fields( 'baw-settings-group' ); ?>
@@ -105,7 +105,7 @@ input {
 }
 </style>
 
-    <h3>Logotype text</h3>
+    <h3>Header</h3>
     <table class="form-table">
         <tr valign="top">
         <th scope="row">Logotype text:</th>
@@ -113,12 +113,9 @@ input {
         </tr>
         
     </table>
-    <hr /><br />
-
-    <h3>Menu label</h3>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Column label:</th>
+        <th scope="row">Menu label:</th>
         <td><input type="text" name="menu_label" value="<?php echo get_option('menu_label'); ?>" /></td>
         </tr>
     </table>
@@ -127,7 +124,7 @@ input {
     <h3>Location</h3>
     <table class="form-table">
         <tr valign="top">
-        <th scope="row">Column label:</th>
+        <th scope="row">Location label:</th>
         <td><input type="text" name="location_label" value="<?php echo get_option('location_label'); ?>" /></td>
         </tr>
          
